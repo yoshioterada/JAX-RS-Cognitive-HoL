@@ -43,19 +43,19 @@ please add following dependencies onder properties ?
 ## 3. Build with Dependencies
 In order to get the dependencies libraries like Jersey and Jackson,please execute the "Build with Dependencies" from the menu of NetBeans?
 
-![](https://c1.staticflickr.com/1/293/32310386520_3161d8ce53.jpg)
-Then following screen will be showed.
-![](https://c1.staticflickr.com/1/752/32648817136_e2ca8e412f_z.jpg)
-And if you succeed to get the libraries, you can see the "BUILD SUCCESS" message on the console.
-![](https://c1.staticflickr.com/1/444/32648817236_89927562f1_z.jpg)
+![](https://c1.staticflickr.com/1/293/32310386520_3161d8ce53.jpg)  
+Then following screen will be showed.  
+![](https://c1.staticflickr.com/1/752/32648817136_e2ca8e412f_z.jpg)  
+And if you succeed to get the libraries, you can see the "BUILD SUCCESS" message on the console.  
+![](https://c1.staticflickr.com/1/444/32648817236_89927562f1_z.jpg)  
 ##  4.  Create Main Class
 In order to create Main class, plese open the "Source Packages" of the Project menu of left screen? Then you select the package and click the right mouse button on the package? Then following screen will be showed. Then please select "New" -> "Java Class..." ?
-![](https://c1.staticflickr.com/1/706/32648817376_77fa940627_z.jpg)
+![](https://c1.staticflickr.com/1/706/32648817376_77fa940627_z.jpg)  
 
-Then you can see the following screen. And please change the name of "Class Name:" field to "Main"? And Please push the "Finish" button?
-![](https://c1.staticflickr.com/1/611/31846652114_7ea792ca99_z.jpg)
-Then you can see the following screen.
-![](https://c1.staticflickr.com/1/283/32310386880_4bdcf9d426_z.jpg)
+Then you can see the following screen. And please change the name of "Class Name:" field to "Main"? And Please push the "Finish" button?  
+![](https://c1.staticflickr.com/1/611/31846652114_7ea792ca99_z.jpg)  
+Then you can see the following screen.  
+![](https://c1.staticflickr.com/1/283/32310386880_4bdcf9d426_z.jpg)  
 ##  5. Basic of JAX-RS Programing(HTTP GET)
 At first, Please write the following code ?  Following code will invoke the HTTP GET method to the target URL. After got the respose, it will show the response data to standard output as String.
 
@@ -90,10 +90,10 @@ public class Main {
 }
 ```
 
-After write the code,please compile execute the "Run File" from the menu? 
-![](https://c1.staticflickr.com/1/761/32648817746_645549cd71.jpg)
+After write the code,please compile execute the "Run File" from the menu?  
+![](https://c1.staticflickr.com/1/761/32648817746_645549cd71.jpg)  
 Then you can see the **"BUILD SUCCES"** messages with the HTML code which you specified the URL. In this time, the HTML source code of [https://www.microsoft.com/ja-jp/](https://www.microsoft.com/ja-jp/ "Microsoft Japan") will be showed on console.  
-![](https://c1.staticflickr.com/1/714/32648817976_ee063c004e_z.jpg)
+![](https://c1.staticflickr.com/1/714/32648817976_ee063c004e_z.jpg)  
 The Above code will output all of the response as String even though it failed. So you can't understand whether the response was succeed or not. In order to confirm the invocation success or failure, you can add like following code.
 
 ```
@@ -293,14 +293,14 @@ Now, if we send the JSON data to the Cognitive Services, we can get the JSON dat
 However for Java developers, we can treat the JSON data as Java Object. So since now, we bind the JSON data to Java Object by using JAX-B (After Java EE 8 is released, we will be able to use JSON-B).
 
 **Create a new Java Package for sotre the binding Object**  
-At first, please create the new "Java Package..."? please select the exsiting package like "com.yoshio3" then click the mouse right button ? 
-![](https://c1.staticflickr.com/1/673/32310387200_a89819a3d4.jpg)
-Then you can select the "Java Package...". After selected the "Java Package...", you can see the following window. Then, please input the "com.yoshio3.entities" into the "Package Name:" and push the Finish button? 
-![](https://c1.staticflickr.com/1/407/31846652314_2c295afbc6.jpg)
+At first, please create the new "Java Package..."? please select the exsiting package like "com.yoshio3" then click the mouse right button ?  
+![](https://c1.staticflickr.com/1/673/32310387200_a89819a3d4.jpg)  
+Then you can select the "Java Package...". After selected the "Java Package...", you can see the following window. Then, please input the "com.yoshio3.entities" into the "Package Name:" and push the Finish button?  
+![](https://c1.staticflickr.com/1/407/31846652314_2c295afbc6.jpg)  
 
 **Create MyObjectMapperProvider class**  
-please create MyObjectMapperProvider class to be able to use the JSON map functionality with Jackson (JSON Provider)? [The detail explanation was wrote on this link.](https://jersey.java.net/documentation/latest/media.html "")
-![](https://c1.staticflickr.com/1/765/32310387410_5e89a86d33.jpg)
+please create MyObjectMapperProvider class to be able to use the JSON map functionality with Jackson (JSON Provider)? [The detail explanation was wrote on this link.](https://jersey.java.net/documentation/latest/media.html "")  
+![](https://c1.staticflickr.com/1/765/32310387410_5e89a86d33.jpg)  
 
 
 ```
@@ -368,9 +368,9 @@ For request body, only "url" is needed.
 }
 ```
 
-For the above JSON data, pleas create FaceDetectRequestJSONBody class? In the class, please specify one instance valuable as url? After that please create setter and getter method? This is the binding object of above.
-![](https://c1.staticflickr.com/1/769/31846652504_51059e2942.jpg)
-![](https://c1.staticflickr.com/1/474/32310387620_8dd2731d50.jpg)
+For the above JSON data, pleas create FaceDetectRequestJSONBody class? In the class, please specify one instance valuable as url? After that please create setter and getter method? This is the binding object of above.  
+![](https://c1.staticflickr.com/1/769/31846652504_51059e2942.jpg)  
+![](https://c1.staticflickr.com/1/474/32310387620_8dd2731d50.jpg)  
 
 
 ```
@@ -422,8 +422,8 @@ For response body, there is 3 element. So we need 3 instance valuable inside of 
 ]
 ```
 
-For the above JSON data, pleas create FaceDetectResponseJSONBody class? In the class please write the following code?
-![](https://c1.staticflickr.com/1/264/32648818866_9f74032e61.jpg)
+For the above JSON data, pleas create FaceDetectResponseJSONBody class? In the class please write the following code?  
+![](https://c1.staticflickr.com/1/264/32648818866_9f74032e61.jpg)  
 
 ```
 package com.yoshio3.entities;
