@@ -4,17 +4,24 @@ This is the HoL for Java begineers like students or biginner for JAX-RS client. 
 
 
 ## 1.  Create Maven Project
-![Start NetBeans](https://c1.staticflickr.com/1/750/32648816036_6192827bf1_z.jpg)
+At first, please start the IDE(NetBeans)? Then please create the new Project from the menue?  
+![Start NetBeans](https://c1.staticflickr.com/1/750/32648816036_6192827bf1_z.jpg)  
 
-![Create Maven Project](https://c1.staticflickr.com/1/370/32648816356_03a8399775_z.jpg)
+If you selected the "New Project...", you can see following screen. Plesae select "Maven" from categories and select "Java Application" from "Projects:"?  
 
-![](https://c1.staticflickr.com/1/423/32648816526_0caccfcd37_z.jpg)
+![Create Maven Project](https://c1.staticflickr.com/1/370/32648816356_03a8399775_z.jpg)  
 
-![](https://c1.staticflickr.com/1/713/32648816666_0e83cb495f_z.jpg)
+Then you can see the following screen. In the screen, please write the name for the Project and specify the value? Finally please push the "Finish" button? Then the Netbeans will automatically show up the new project on the screen.
+
+![](https://c1.staticflickr.com/1/423/32648816526_0caccfcd37_z.jpg)  
 
 ## 2.  Modify the pom.xml file  
-please add following dependencies onder properties ?  
-![](https://c1.staticflickr.com/1/512/32648816846_879fc78000_z.jpg)
+
+After created the project, please select the pom.xml file from the directory of "Project Files"? If you click the file, following screen will be showed on the right pane.
+
+![](https://c1.staticflickr.com/1/713/32648816666_0e83cb495f_z.jpg)  
+
+In order to proceed this HoL, please add the following dependencies after the properties ?  
 
 ```
     <properties>
@@ -40,23 +47,43 @@ please add following dependencies onder properties ?
         </dependency>
     </dependencies>
 ```
+
+After wrote it, it will be look like following.  
+
+![](https://c1.staticflickr.com/1/512/32648816846_879fc78000_z.jpg)  
+
+
+
 ## 3. Build with Dependencies
+
 In order to get the dependencies libraries like Jersey and Jackson,please execute the "Build with Dependencies" from the menu of NetBeans?
 
 ![](https://c1.staticflickr.com/1/293/32310386520_3161d8ce53.jpg)  
+
 Then following screen will be showed.  
+
 ![](https://c1.staticflickr.com/1/752/32648817136_e2ca8e412f_z.jpg)  
+
 And if you succeed to get the libraries, you can see the "BUILD SUCCESS" message on the console.  
+
 ![](https://c1.staticflickr.com/1/444/32648817236_89927562f1_z.jpg)  
+
 ##  4.  Create Main Class
+
 In order to create Main class, plese open the "Source Packages" of the Project menu of left screen? Then you select the package and click the right mouse button on the package? Then following screen will be showed. Then please select "New" -> "Java Class..." ?  
+
 ![](https://c1.staticflickr.com/1/706/32648817376_77fa940627_z.jpg)  
 
 Then you can see the following screen. And please change the name of "Class Name:" field to "Main"? And Please push the "Finish" button?  
+
 ![](https://c1.staticflickr.com/1/611/31846652114_7ea792ca99_z.jpg)  
+
 Then you can see the following screen.  
+
 ![](https://c1.staticflickr.com/1/283/32310386880_4bdcf9d426_z.jpg)  
+
 ##  5. Basic of JAX-RS Programing(HTTP GET)
+
 At first, Please write the following code ?  Following code will invoke the HTTP GET method to the target URL. After got the respose, it will show the response data to standard output as String.
 
 ```
@@ -91,9 +118,13 @@ public class Main {
 ```
 
 After write the code,please compile execute the "Run File" from the menu?  
+
 ![](https://c1.staticflickr.com/1/761/32648817746_645549cd71.jpg)  
+
 Then you can see the **"BUILD SUCCES"** messages with the HTML code which you specified the URL. In this time, the HTML source code of [https://www.microsoft.com/ja-jp/](https://www.microsoft.com/ja-jp/ "Microsoft Japan") will be showed on console.  
+
 ![](https://c1.staticflickr.com/1/714/32648817976_ee063c004e_z.jpg)  
+
 The Above code will output all of the response as String even though it failed. So you can't understand whether the response was succeed or not. In order to confirm the invocation success or failure, you can add like following code.
 
 ```
@@ -130,7 +161,9 @@ The Above code will output all of the response as String even though it failed. 
 ```
 
 ##  6. Basic of JAX-RS Programing(HTTP POST)
+
 If you succeed the above HTTP GET code, it is easy to understand the POST code too. Compare with the above (HTTP GET) code, the POST code need additional code when invoke the post() method. Because GET method only get the data from the Web Server. However POST method need to send some data to the Server. In order to send some data to Server, POST is need additional code like follows. In this Sample, the program send the JSON data to the server.  
+
 **Note: Following code is only sample code to understand the implementation of POST, so it doesn't run in realworld because invalid URL. Please don't write the following code?**
 
 ```
@@ -149,6 +182,7 @@ If you succeed the above HTTP GET code, it is easy to understand the POST code t
 ```
 
 ##  7.  Invoke Cognitive Services from JAX-RS
+
 Since now, we will implement the Cognitive Services by using JAX-RS client. Before write the code, please remember the HTTP invocation for Cognitive Services?
 
 ```
@@ -299,14 +333,19 @@ However for Java developers, we can treat the JSON data as Java Object. So since
 **Create a new Java Package for sotre the binding Object**  
 
 At first, please create the new "Java Package..."? please select the exsiting package like "com.yoshio3" then click the mouse right button ?  
+
 ![](https://c1.staticflickr.com/1/673/32310387200_a89819a3d4.jpg)  
+
 Then you can select the "Java Package...". After selected the "Java Package...", you can see the following window. Then, please input the "com.yoshio3.entities" into the "Package Name:" and push the Finish button?  
+
 ![](https://c1.staticflickr.com/1/407/31846652314_2c295afbc6.jpg)  
 
 **Create MyObjectMapperProvider class**  
 
 Please create MyObjectMapperProvider class?
+
 ![](https://c1.staticflickr.com/1/765/32310387410_5e89a86d33.jpg)  
+
 This class is needed to be able to use the JSON map functionality with Jackson (JSON Provider)? [The detail explanation was wrote on this link.](https://jersey.java.net/documentation/latest/media.html "")  
 
 ```
@@ -366,6 +405,7 @@ public class MyObjectMapperProvider implements ContextResolver<ObjectMapper> {
 ```
 
 **Create JSON Binding Object for Request**  
+
 For request body, only "url" is needed. 
 
 ```
@@ -375,8 +415,11 @@ For request body, only "url" is needed.
 ```
 
 For the above JSON data, pleas create FaceDetectRequestJSONBody class?  
+
 ![](https://c1.staticflickr.com/1/769/31846652504_51059e2942.jpg)  
+
 ![](https://c1.staticflickr.com/1/474/32310387620_8dd2731d50.jpg)  
+
 In the class, please declare one instance valuable as url? After that please create setter and getter method for it? This is the binding object for above JSON data. 
 
 ```
@@ -413,6 +456,7 @@ public class FaceDetectRequestJSONBody {
 ```
 
 **Create JSON Binding Object for Response**  
+
 For response body, there is 3 element.  
 
 ```
@@ -429,7 +473,9 @@ For response body, there is 3 element.
 ```
 
 For the above JSON data, pleas create FaceDetectResponseJSONBody class? 
+
 ![](https://c1.staticflickr.com/1/264/32648818866_9f74032e61.jpg)  
+
 We need to declare 3 instance valuable inside of the class.
 Please write the following code?  
 
@@ -503,6 +549,7 @@ public class FaceDetectResponseJSONBody {
 ```
 
 **Modify the Request Code**  
+
 Then you can use the binding object which you created the above. In order to use the Jackson functionality, at first, please modify the instance cratetion code of Client object by using ClientBuilder.newBuilder()? Then please create a instance of FaceDetectRequestJSONBody and specify the picture url to setUrl() method? This is the change for the Request code.     
 
 ```
@@ -589,7 +636,7 @@ After modified the above code, please compile again and execute it? Then followi
 
 All of source code for this HoL is exsiting on [this site](https://github.com/yoshioterada/JAX-RS-Cognitive-HoL/tree/master/src/main/java/com/yoshio3).
 
-In this Hands on Lab, you can learn how to implement the Java RESTful Web Service(JAX-RS). This is very basic senario to write the REST client in Java. So if you change both url and mapped JSON binding object, you can easily reuse this code for every REST call. If you finished this, please try to another cognitive services like Emotional API ?
+In this Hands on Lab, you learned how to implement the Cognitive Services with Java RESTful Web Service(JAX-RS). This is very basic senario to write the REST client in Java. So if you change both url and mapped JSON binding object, you can easily reuse this code for every REST call. If you finished this, please try to another cognitive services like Emotional API ?
 
 And you can see some additional sample on following. Please try or enjoy it?
 
