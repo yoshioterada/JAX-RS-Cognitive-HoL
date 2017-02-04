@@ -268,6 +268,8 @@ Now, if we send the JSON data to the Cognitive Services, we can get the JSON dat
 
 **Send JSON data to Server (Request)** 
 
+Following is the request body sample to send the Cognitive Services (Face API).
+
 ```
 {
   "url":"https://pbs.twimg.com/profile_images/1765776666/s-abetwitter1.png"
@@ -275,6 +277,8 @@ Now, if we send the JSON data to the Cognitive Services, we can get the JSON dat
 ```
 
 **Received JSON data from Server (Response)**
+
+Following is the response body sample from the Cognitive Services (Face API).
 
 ```
 [  
@@ -293,15 +297,17 @@ Now, if we send the JSON data to the Cognitive Services, we can get the JSON dat
 However for Java developers, we can treat the JSON data as Java Object. So since now, we bind the JSON data to Java Object by using JAX-B (After Java EE 8 is released, we will be able to use JSON-B).
 
 **Create a new Java Package for sotre the binding Object**  
+
 At first, please create the new "Java Package..."? please select the exsiting package like "com.yoshio3" then click the mouse right button ?  
 ![](https://c1.staticflickr.com/1/673/32310387200_a89819a3d4.jpg)  
 Then you can select the "Java Package...". After selected the "Java Package...", you can see the following window. Then, please input the "com.yoshio3.entities" into the "Package Name:" and push the Finish button?  
 ![](https://c1.staticflickr.com/1/407/31846652314_2c295afbc6.jpg)  
 
 **Create MyObjectMapperProvider class**  
-please create MyObjectMapperProvider class to be able to use the JSON map functionality with Jackson (JSON Provider)? [The detail explanation was wrote on this link.](https://jersey.java.net/documentation/latest/media.html "")  
-![](https://c1.staticflickr.com/1/765/32310387410_5e89a86d33.jpg)  
 
+Please create MyObjectMapperProvider class?
+![](https://c1.staticflickr.com/1/765/32310387410_5e89a86d33.jpg)  
+This class is needed to be able to use the JSON map functionality with Jackson (JSON Provider)? [The detail explanation was wrote on this link.](https://jersey.java.net/documentation/latest/media.html "")  
 
 ```
 package com.yoshio3.entities;
@@ -368,10 +374,10 @@ For request body, only "url" is needed.
 }
 ```
 
-For the above JSON data, pleas create FaceDetectRequestJSONBody class? In the class, please specify one instance valuable as url? After that please create setter and getter method? This is the binding object of above.  
+For the above JSON data, pleas create FaceDetectRequestJSONBody class?  
 ![](https://c1.staticflickr.com/1/769/31846652504_51059e2942.jpg)  
 ![](https://c1.staticflickr.com/1/474/32310387620_8dd2731d50.jpg)  
-
+In the class, please declare one instance valuable as url? After that please create setter and getter method for it? This is the binding object for above JSON data. 
 
 ```
 package com.yoshio3.entities;
@@ -407,7 +413,7 @@ public class FaceDetectRequestJSONBody {
 ```
 
 **Create JSON Binding Object for Response**  
-For response body, there is 3 element. So we need 3 instance valuable inside of the class.
+For response body, there is 3 element.  
 
 ```
 [  
@@ -422,8 +428,10 @@ For response body, there is 3 element. So we need 3 instance valuable inside of 
 ]
 ```
 
-For the above JSON data, pleas create FaceDetectResponseJSONBody class? In the class please write the following code?  
+For the above JSON data, pleas create FaceDetectResponseJSONBody class? 
 ![](https://c1.staticflickr.com/1/264/32648818866_9f74032e61.jpg)  
+We need to declare 3 instance valuable inside of the class.
+Please write the following code?  
 
 ```
 package com.yoshio3.entities;
@@ -494,7 +502,8 @@ public class FaceDetectResponseJSONBody {
 }
 ```
 
-**Modify the Request Code**
+**Modify the Request Code**  
+Then you can use the binding object which you created the above. In order to use the Jackson functionality, at first, please modify the instance cratetion code of Client object by using ClientBuilder.newBuilder()? Then please create a instance of FaceDetectRequestJSONBody and specify the picture url to setUrl() method? This is the change for the Request code.     
 
 ```
     private void execPOSTSample() {
@@ -526,7 +535,10 @@ public class FaceDetectResponseJSONBody {
 ```
 
 
-**Modify the Response Code**
+**Modify the Response Code**  
+
+After received the Response from Server, we can read the data by using readEntity() method. Until now, we got the data as "String.class". However since now, we can use the FaceDetectResponseJSONBody[].class instead of the String.class. After read the data, you can treat the JSON data to the Array of FaceDetectResponseJSONBody object.  
+
 
 ```
     private void execPOSTSample() {
@@ -570,103 +582,20 @@ public class FaceDetectResponseJSONBody {
     }
 ```
 
-**Final code of Main Class**
+After modified the above code, please compile again and execute it? Then following result will be showed on concole.
 
-```
-package com.yoshio3;
 
-import com.yoshio3.entities.FaceDetectRequestJSONBody;
-import com.yoshio3.entities.FaceDetectResponseJSONBody;
-import com.yoshio3.entities.MyObjectMapperProvider;
-import java.util.Map;
-import javax.ws.rs.client.Client;
-import javax.ws.rs.client.ClientBuilder;
-import javax.ws.rs.client.Entity;
-import javax.ws.rs.client.WebTarget;
-import javax.ws.rs.core.MediaType;
-import javax.ws.rs.core.Response;
-import org.glassfish.jersey.jackson.JacksonFeature;
+## 9. Finally
 
-/**
- *
- * @author Yoshio Terada
- */
-public class Main {
+All of source code for this HoL is exsiting on [this site](https://github.com/yoshioterada/JAX-RS-Cognitive-HoL/tree/master/src/main/java/com/yoshio3).
 
-    public static void main(String... args) {
-        Main main = new Main();
-        main.execPOSTSample();
-    }
+In this Hands on Lab, you can learn how to implement the Java RESTful Web Service(JAX-RS). This is very basic senario to write the REST client in Java. So if you change both url and mapped JSON binding object, you can easily reuse this code for every REST call. If you finished this, please try to another cognitive services like Emotional API ?
 
-    private void execPOSTSample() {
-        Client client = ClientBuilder.newBuilder()
-                .register(MyObjectMapperProvider.class)
-                .register(JacksonFeature.class)
-                .build();
-        WebTarget target = client
-                .target("https://westus.api.cognitive.microsoft.com")
-                .path("/face/v1.0/detect")
-                .queryParam("returnFaceId", "true")
-                .queryParam("returnFaceLandmarks", "false")
-                .queryParam("returnFaceAttributes", "age,gender,smile");
-        
-        FaceDetectRequestJSONBody entity = new FaceDetectRequestJSONBody();
-        entity.setUrl("https://pbs.twimg.com/profile_images/1765776666/s-abetwitter1.png");
+And you can see some additional sample on following. Please try or enjoy it?
 
-        Response response = target
-                .request(MediaType.APPLICATION_JSON)
-                .header("Ocp-Apim-Subscription-Key", "3eef51745aea42a29023205dd8192a87")
-                .post(Entity.entity(entity, MediaType.APPLICATION_JSON_TYPE));
+**Aditional Sample as follows**  
 
-        FaceDetectResponseJSONBody[] personsInPicture = null;
-        if (isRequestSuccess(response)) {
-            personsInPicture = response.readEntity(FaceDetectResponseJSONBody[].class);
-        } else {
-            handleIllegalState(response);
-        }
-       if(personsInPicture == null){
-            return;
-        }
-        
-        //For example, get the information of first person of the picture
-        FaceDetectResponseJSONBody faceDetectData = personsInPicture[0];
-        //Get age, gender, 
-        Map<String, Object> faceAttributes = faceDetectData.getFaceAttributes();
-        Double age = (Double) faceAttributes.get("age");
-        String gender = (String) faceAttributes.get("gender"); 
-
-        System.out.println("Age：" + age + "\tGender：" + gender);
-    }
-
-    private void execGETSample() {
-        Client client = ClientBuilder.newClient();
-        WebTarget target = client.target("https://www.microsoft.com/ja-jp/");
-        Response response = target
-                .request(MediaType.TEXT_HTML)
-                .get();
-        if (isRequestSuccess(response)) {
-            System.out.println(response.readEntity(String.class));
-        } else {
-            handleIllegalState(response);
-        }
-    }
-
-    /*
-     Check the REST Invocation is success or failed.
-     */
-    private boolean isRequestSuccess(Response response) {
-        Response.StatusType statusInfo = response.getStatusInfo();
-        Response.Status.Family family = statusInfo.getFamily();
-        return family != null && family == Response.Status.Family.SUCCESSFUL;
-    }
-
-    /*
-     Operate when the REST invocaiton failed.
-     */
-    private void handleIllegalState(Response response)
-            throws IllegalStateException {
-        String error = response.readEntity(String.class);
-        throw new IllegalStateException(error);
-    }
-}
-```
+1. [OCR Sample Application](https://github.com/yoshioterada/OCR-Sample-of-Cognitive-Service)  
+2. [Face and Emotion detect on Java EE App](https://github.com/yoshioterada/Face-Detect-Cognitive-Service-with-Java-EE)  
+3. [Office 365 Excel REST API](https://github.com/yoshioterada/Office-365-Excel-REST-API-for-Java)  
+4. [Intrusion detection Java App on RaspberryPi with Microsoft Azure](https://github.com/yoshioterada/RaspberryPi-To-Azure-IoT-Hub)  
