@@ -49,7 +49,7 @@ Then following screen will be showed.
 And if you succeed to get the libraries, you can see the "BUILD SUCCESS" message on the console.  
 ![](https://c1.staticflickr.com/1/444/32648817236_89927562f1_z.jpg)  
 ##  4.  Create Main Class
-In order to create Main class, plese open the "Source Packages" of the Project menu of left screen? Then you select the package and click the right mouse button on the package? Then following screen will be showed. Then please select "New" -> "Java Class..." ?
+In order to create Main class, plese open the "Source Packages" of the Project menu of left screen? Then you select the package and click the right mouse button on the package? Then following screen will be showed. Then please select "New" -> "Java Class..." ?  
 ![](https://c1.staticflickr.com/1/706/32648817376_77fa940627_z.jpg)  
 
 Then you can see the following screen. And please change the name of "Class Name:" field to "Main"? And Please push the "Finish" button?  
