@@ -4,22 +4,22 @@ This is a Hands on Lab contents for creating Cognitive Services by Java RESTful 
 
 **Note :**
 -----  
-Since 2017/1/17, the Cognitive service endpoint URL had changed to [https://westus.api.cognitive.microsoft.com/face/v1.0](https://westus.api.cognitive.microsoft.com/face/v1.0 "https://westus.api.cognitive.microsoft.com/face/v1.0"). 
+Since 2017/1/17, the Cognitive service endpoint URL had changed to [https://westus.api.cognitive.microsoft.com/face/v1.0?WT.mc_id=java-0000-yoterada](https://westus.api.cognitive.microsoft.com/face/v1.0?WT.mc_id=java-0000-yoterada "https://westus.api.cognitive.microsoft.com/face/v1.0?WT.mc_id=java-0000-yoterada"). 
 
 Even now you are using the OLD url ([https://api.projectoxford.ai/face/v1.0/](https://api.projectoxford.ai/face/v1.0/ "https://api.projectoxford.ai/face/v1.0/") ), please modify the URL ASAP? The old API endpoints will be deprecated 90 days(on 4/15).
 
 
 Preparation  
 -----  
-##  1. [Accecss to the Cognitive Services Site](https://www.microsoft.com/cognitive-services/en-us/ "Accecss to the Cognitive Services Site")  
+##  1. [Accecss to the Cognitive Services Site](https://www.microsoft.com/cognitive-services/en-us/?WT.mc_id=java-0000-yoterada "Accecss to the Cognitive Services Site")  
 Then you can see following screen. 
 ![Cognitive Services Site](https://c1.staticflickr.com/1/530/32562085411_14c8374e78_z.jpg "Cognitive Services Site")  
-## 2. [Push the button of 'Get started for free'](https://www.microsoft.com/cognitive-services/en-us/sign-up "Get started for free")  
+## 2. [Push the button of 'Get started for free'](https://www.microsoft.com/cognitive-services/en-us/sign-up?WT.mc_id=java-0000-yoterada "Get started for free")  
 Then you can see following screen. So please "Sign up" by using (Microsoft account or GitHub or LinkedIn) account ? ![Get Started for free](https://c1.staticflickr.com/1/410/32305249570_76043c5247_z.jpg "Get Started for free")
 ## 3. Get the Key of Face & Emotion API  
 After sign up the account, you can see following screen. If you get the key to access the cognitieve services, you can try it.  
  ![](https://c1.staticflickr.com/1/420/31841316184_ea1f2bdc3c_z.jpg "")  For example, Please search the key of "Face" and "Emotion" API as follows? ![Face & Emotion Key](https://c1.staticflickr.com/1/359/31841316904_523e839f51_z.jpg "Face & Emotion Key")  Then Please push the link of "Show"? You will be able see the access key like following detital number "3eef5*********************192a87". ![Face & Emotion Access Key](https://c1.staticflickr.com/1/779/31841317454_135bb40be6_z.jpg "Face & Emotion Access Key")
-## 4. [Go to Face API site](https://www.microsoft.com/cognitive-services/en-us/face-api "Go to Face API site")
+## 4. [Go to Face API site](https://www.microsoft.com/cognitive-services/en-us/face-api?WT.mc_id=java-0000-yoterada "Go to Face API site")
 After you get the access key, please go to the Face API site? Please push the menu of "APIs" on top of the screen? Then advanced menu will be showed and push the link of "Face"? 
 	![APIs](https://c1.staticflickr.com/1/381/31841317784_039721b1c5_z.jpg "APIs")  
 	Then following "Face API" document site will be showed.
@@ -67,7 +67,7 @@ Ocp-Apim-Subscription-Key: •••••••••••••••••�
 
 **Note :**
 -----  
-Since 2017/1/17, the Cognitive service endpoint URL had changed to [https://westus.api.cognitive.microsoft.com/face/v1.0](https://westus.api.cognitive.microsoft.com/face/v1.0 "https://westus.api.cognitive.microsoft.com/face/v1.0"). 
+Since 2017/1/17, the Cognitive service endpoint URL had changed to [https://westus.api.cognitive.microsoft.com/face/v1.0?WT.mc_id=java-0000-yoterada](https://westus.api.cognitive.microsoft.com/face/v1.0?WT.mc_id=java-0000-yoterada "https://westus.api.cognitive.microsoft.com/face/v1.0?WT.mc_id=java-0000-yoterada"). 
 
 Even now you are using the OLD url ([https://api.projectoxford.ai/face/v1.0/](https://api.projectoxford.ai/face/v1.0/ "https://api.projectoxford.ai/face/v1.0/") ), please modify the URL ASAP? The old API endpoints will be deprecated 90 days(on 4/15).
 
