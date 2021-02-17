@@ -51,7 +51,7 @@ If there is no problem on the request and response, you can see following screen
 In order to create the application, you need to understand the HTTP method call, URL and Request body. So please understand what kind of the information is needed for the service invocation ?
 
 ```
-POST https://westus.api.cognitive.microsoft.com/face/v1.0/detect?returnFaceId=true&returnFaceLandmarks=false&returnFaceAttributes=age,gender,smile,facialhair,headpose,glasses HTTP/1.1
+POST https://westus.api.cognitive.microsoft.com/face/v1.0/detect?returnFaceId=true&returnFaceLandmarks=false&returnFaceAttributes=age,gender,smile,facialhair,headpose,glasses&WT.mc_id=java-0000-yoterada HTTP/1.1
 Content-Type: application/json
 Host: westus.api.cognitive.microsoft.com
 Ocp-Apim-Subscription-Key: ••••••••••••••••••••••••••••••••
